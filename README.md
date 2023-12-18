@@ -34,7 +34,7 @@ Below are the functions in this file:
 1. getPlace<br>
 **Remember that this function indexes spaces before the elements and not elements themselves**<br><br>
 This function takes two arguments, a list and an index where you want to access the list at and splits it into a tuple of two lists, ie a list before the given index and a list after the given index<br><br>
-For example:<br>
+For example:
 `getPlace [1;2;3;4] 2`<br>
 would give
 `([1;2], [3;4])` as the output
