@@ -20,3 +20,30 @@ let rec bubbleSort lst =
     else checkswap sortedPass
   in
   checkswap lst;;
+
+let rec mergeSort lst =
+  let rec split lst =
+    match lst with
+    | [] -> [], []
+    | [x] -> [x], []
+    | x :: y :: rest ->
+      let left, right = split rest in
+      x :: left, y :: right
+  in
+  let rec merge left right =
+    match left, right with
+    | [], right -> right
+    | left, [] -> left
+    | x :: xs, y :: ys ->
+      if x < y then x :: merge xs (y :: ys)
+      else y :: merge (x :: xs) ys
+  in
+  match lst with
+  | [] -> []
+  | [x] -> [x]
+  | _ ->
+    let left, right = split lst in
+    let sortedLeft = mergeSort left in
+    let sortedRight = mergeSort right in
+    merge sortedLeft sortedRight;;
+  
