@@ -43,3 +43,8 @@ let rec insert x t =
     if x <= ele then Br (ele, insert x br1, br2)
     else Br (ele, br1, insert x br2);;
 
+(* Function to convert a given list to a BST *)
+let rec toTree lst = 
+  match lst with 
+  | [] -> Lf 
+  | x :: xs -> insert x (toTree xs);;
