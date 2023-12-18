@@ -36,7 +36,8 @@ let lookup ((_, after) : 'a place) =
 let delete ((before, after) : 'a place) = 
   match after with 
   | [] -> raise IndexOutofBounds 
-  | _ :: t -> (before, t)
+  | _ :: t -> (before, t);;
 
 let insert x ((before, after) : 'a place) = 
-  (List.append before [x], after)
+  (List.append before [x], after);;
+
