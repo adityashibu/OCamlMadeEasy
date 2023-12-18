@@ -23,7 +23,7 @@ Here are some of the algorithms you can find in the algorithms folder:
 2. Bubble Sort
 3. Merge Sort
 
-## ArrayModules
+### ArrayModules
 This folder contains the below files:
 1. ArrayIndexing.ml
 2. ArrayTuples.ml
