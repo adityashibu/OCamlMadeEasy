@@ -6,13 +6,17 @@ Trying to add additional features to the language of OCaml such as array Indexin
 1. Make sure you have git installed and running before continuing with the following steps
 2. Open your terminal or Command prompt
 3. Type in:<br>
-`git clone https://github.com/adwii-iii/OCamlMadeEasy.git`
+```Shell
+git clone https://github.com/adwii-iii/OCamlMadeEasy.git
+```
 
 #### MacOS:
 1. Since git is usually pre installed with Mac, you can skip step one
 2. Open terminal
 3. Type in:<br>
-`git clone https://github.com/adwii-iii/OCamlMadeEasy.git`
+```Shell
+git clone https://github.com/adwii-iii/OCamlMadeEasy.git
+```
 
 ## What is included in the repository?
 ### Algorithms
@@ -55,11 +59,12 @@ would give
 would give
 `False` as the output<br><br>
 4. Next and Lookup<br>
-Next is a function that is used to show you the list when the index is at the given user index + 1<br><br>
+Next is a function that is used to show you the list when the index is at the given user index + 1, while lookup gives the element at index + 1<br><br>
 For example:
 `getPlace [1;2;3;4] 2 |> next`<br>
 would give
 `([1;2;3], [4])` as the output<br><br>
-`getPlace [1;2;3;4] 1 |> next`<br>
+`getPlace [1;2;3;4] 2 |> lookup`<br>
 would give
-`([1;2], [3;4])` as the output<br><br>
+`3` as the output<br><br>
+
