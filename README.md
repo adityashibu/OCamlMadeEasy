@@ -32,7 +32,7 @@ This folder contains the below files:
 1. ArrayIndexing.ml
 2. ArrayTuples.ml
 
-- **Array Indexing**<br>
+### **Array Indexing**<br>
 This file contains some basic array Indexing<br><br>
 Below are the functions in this file:
 1. <b>GetPlace</b><br>
