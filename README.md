@@ -44,4 +44,22 @@ For example:
 `getPlace [1;2;3;4] 2`<br>
 would give
 `([1;2], [3;4])` as the output, then passing it to collapse in such a manner: `getPlace [1;2;3;4] 2 |> collapse`<br>
-would give back `[1;2;3;4;]`
+would give back `[1;2;3;4;]`<br><br>
+3. IsStart and IsEnd<br>
+This function takes an argument of the previously defined custom type o 'a place and then checks if the index that the user has inputted is either the starting index or if it's the ending index<br><br>
+For example:
+`getPlace [1;2;3;4] 0 |> isStart`<br>
+would give
+`True` as the output<br><br>
+`getPlace [1;2;3;4] 0 |> isEnd`<br>
+would give
+`False` as the output<br><br>
+4. Next and Lookup<br>
+Next is a function that is used to show you the list when the index is at the given user index + 1<br><br>
+For example:
+`getPlace [1;2;3;4] 2 |> next`<br>
+would give
+`([1;2;3], [4])` as the output<br><br>
+`getPlace [1;2;3;4] 1 |> next`<br>
+would give
+`([1;2], [3;4])` as the output<br><br>
