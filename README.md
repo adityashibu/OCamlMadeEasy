@@ -67,4 +67,13 @@ would give
 `getPlace [1;2;3;4] 2 |> lookup`<br>
 would give
 `3` as the output<br><br>
+4. <b>Delete and Insert</b><br>
+Delete is a function that deletes the element after the given index, and Insert insert's an element before the given index<br><br>
+For example:
+`getPlace [1;2;3;4] 2 |> delete`<br>
+would give
+`([1;2], [4])` as the output<br><br>
+`getPlace [1;2;3;4] 2 |> insert 7`<br>
+would give
+`([1;2;7], [4])` as the output<br><br>
 
