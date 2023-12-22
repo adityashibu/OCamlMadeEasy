@@ -16,7 +16,7 @@ jobs:
       with:
         ocaml-compiler: 4.12
         
-    - name: Build and Tests
+    - name: Build
       run: |
         eval $(opam env)
         opam install --deps-only -y .
