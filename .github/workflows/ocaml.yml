@@ -15,17 +15,7 @@ jobs:
       uses: ocaml/setup-ocaml@v2
       with:
         ocaml-compiler: 4.12
-
-    - name: Debugging Information
-      run: |
-        echo "PATH: $PATH"
-        opam --version
-
-    - name: Check Environment
-      run: |
-        echo "PATH: $PATH"
-        echo "OCAML_TOPLEVEL_PATH: $OCAML_TOPLEVEL_PATH"  # Check other relevant variables
-
+        
     - name: Build
       run: |
         eval $(opam env)
