@@ -11,16 +11,23 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
+    - name: Install OCaml
+      run: sudo apt-get install -y ocaml
+
     - name: Set up OCaml and Dune
       run: |
-        sudo apt-get update -y
-        sudo apt-get install -y opam
         opam init --auto-setup --disable-sandboxing
         eval $(opam env)
         opam switch create . ocaml-base-compiler.4.12.1
         eval $(opam env)
         opam install --deps-only -y .
         opam install dune -y
+
+    - name: Clean Up Partially Installed Switch
+      run: opam switch remove .
+
+    - name: Create New OCaml Switch
+      run: opam switch create . ocaml-base-compiler.4.12.1
 
     - name: Build
       run: eval $(opam env) && dune build
