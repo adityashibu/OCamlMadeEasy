@@ -1,4 +1,4 @@
-name: OCaml CI
+name: Auto Devops
 
 on: [push, pull_request]
 
@@ -16,7 +16,7 @@ jobs:
       with:
         ocaml-compiler: 4.12
         
-    - name: Build
+    - name: Build and Tests
       run: |
         eval $(opam env)
         opam install --deps-only -y .
