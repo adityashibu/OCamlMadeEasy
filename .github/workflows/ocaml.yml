@@ -31,6 +31,7 @@ jobs:
         eval $(opam env)
         opam install --deps-only -y .
         opam install dune -y
+        opam install ounit2 -y
         dune build
 
     - name: Run Tests
