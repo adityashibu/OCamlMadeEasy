@@ -11,23 +11,16 @@ jobs:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Install OCaml
-      run: sudo apt-get install -y ocaml
-
     - name: Set up OCaml and Dune
-      run: |
-        opam init --auto-setup --disable-sandboxing
-        export PATH=$HOME/.opam/default/bin:$PATH
-        opam switch create . ocaml-base-compiler.4.12.1
-        eval $(opam env)
-        opam install --deps-only -y .
-        opam install dune -y
+      uses: ocaml/setup-ocaml@v2
+      with:
+        ocaml-version: 4.12
 
     - name: Debugging Information
       run: |
         echo "PATH: $PATH"
         opam --version
-        
+
     - name: Check Environment
       run: |
         echo "PATH: $PATH"
