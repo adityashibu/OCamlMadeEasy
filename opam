@@ -1,0 +1,20 @@
+opam-version: "2.0"
+name: "OCamlMadeEasy"
+version: "1.0"
+synopsis: "Making OCaml more easier to use"
+description: "Integrating OOP related functions into OCaml"
+maintainer: "Aditya Shibu <as2397@hw.ac.uk>"
+homepage: "https://github.com/adwii-iii/OCamlMadeEasy"
+bug-reports: "https://github.com/adwii-iii/OCamlMadeEasy/issues"
+build: [
+  ["dune" "subst"]
+  ["dune" "build" "-p" name "-j" jobs]
+]
+test: [
+  ["dune" "runtest" "-p" name]
+]
+depends: [
+  "ocaml" {>= "4.12.1"}
+  "dune" {>= "2.9"}
+  "ounit2" {with-test}
+]
