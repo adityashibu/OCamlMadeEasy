@@ -20,6 +20,7 @@ jobs:
         opam switch create . ocaml-base-compiler.4.12.1
         eval $(opam env)
         opam install --deps-only -y .
+        opam install dune -y
 
     - name: Build
       run: eval $(opam env) && dune build
