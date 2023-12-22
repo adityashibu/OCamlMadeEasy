@@ -14,7 +14,7 @@ let tests = "test suite for arrayIndex" >::: [
     assert_equal ~printer:print_tuple_of_lists ([1;2], [3;4]) (getPlace [1;2;3;4] 2)
   );
   "getPlace2" >:: (fun _ ->
-    assert_equal ~printer:print_tuple_of_lists ([1;2], [4]) (getPlace [1;2;3;4] 3)
+    assert_equal ~printer:print_tuple_of_lists ([1;2;3], [4]) (getPlace [1;2;3;4] 3)
   );
   "getPlace-Insert-Collapse" >:: (fun _ ->
     assert_equal ~printer:print_list ([1;2]) (getPlace [] 0 |> insert 1 |> insert 2 |> collapse)
