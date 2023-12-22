@@ -14,10 +14,13 @@ jobs:
     - name: Set up OCaml
       uses: ocaml/setup-ocaml@v2
       with:
-        ocaml-compiler: 4.12
+        ocaml-compiler: 4.12  # Specify the version you want to use
 
     - name: Install dependencies
       run: opam install --deps-only -y .
+
+    - name: Install Dune
+      run: opam install dune -y
 
     - name: Build
       run: dune build
