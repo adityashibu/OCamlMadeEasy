@@ -12,10 +12,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up OCaml
-      uses: ocaml/setup-ocaml@v2
-      with:
-        ocaml-compiler: 4.12
-        switch-create: true
+      run: opam switch create . ocaml-base-compiler.4.12.1
 
 
     - name: Install dependencies
