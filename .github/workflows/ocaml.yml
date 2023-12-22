@@ -27,7 +27,10 @@ jobs:
         echo "OCAML_TOPLEVEL_PATH: $OCAML_TOPLEVEL_PATH"  # Check other relevant variables
 
     - name: Build
-      run: eval $(opam env) && dune build
+      run: |
+        eval $(opam env)
+        opam install dune -y
+        dune build
 
     - name: Run Tests
       run: eval $(opam env) && dune exec ./test.exe
