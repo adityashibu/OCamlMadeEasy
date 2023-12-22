@@ -12,11 +12,14 @@ jobs:
       uses: actions/checkout@v2
 
     - name: Set up OCaml
-      run: opam switch create . ocaml-base-compiler.4.12.1
-
-
-    - name: Install dependencies
-      run: opam install --deps-only -y .
+      run: |
+        sudo apt-get update -y
+        sudo apt-get install -y opam
+        opam init --auto-setup --disable-sandboxing
+        eval $(opam env)
+        opam switch create . ocaml-base-compiler.4.12.1
+        opam install --deps-only -y .
+        opam list --installed
 
     - name: Install Dune
       run: opam install dune -y
