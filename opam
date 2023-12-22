@@ -1,0 +1,14 @@
+opam-version: "2.0"
+maintainer: "Your Name <your@email.com>"
+build: [
+  ["dune" "subst"]
+  ["dune" "build" "-p" name "-j" jobs]
+]
+test: [
+  ["dune" "runtest" "-p" name]
+]
+depends: [
+  "ocaml" {>= "4.12.1"}
+  "dune" {>= "2.9"}
+  "ounit2" {with-test}
+]
