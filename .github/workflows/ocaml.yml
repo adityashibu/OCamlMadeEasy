@@ -1,4 +1,4 @@
-name: OCaml CI
+name: Auto Devops
 
 on: [push, pull_request]
 
