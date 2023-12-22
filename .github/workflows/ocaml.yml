@@ -14,7 +14,9 @@ jobs:
     - name: Set up OCaml
       uses: ocaml/setup-ocaml@v2
       with:
-        ocaml-compiler: 4.12  # Specify the version you want to use
+        ocaml-version: 4.12
+        switch-create: true
+
 
     - name: Install dependencies
       run: opam install --deps-only -y .
