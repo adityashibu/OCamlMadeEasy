@@ -22,6 +22,15 @@ jobs:
     - name: Install Dune
       run: opam install dune -y
 
+    - name: Print Environment Variables
+      run: |
+        echo "OPAM switch: $OPAM_SWITCH_PREFIX"
+        echo "OPAM environment variables:"
+        env | grep OPAM
+
+    - name: Print Installed Packages
+      run: opam list --installed
+
     - name: Build
       run: dune build
 
