@@ -1,0 +1,29 @@
+name: OCaml CI
+
+on: [push, pull_request]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Set up OCaml
+      uses: ocaml/setup-ocaml@v2
+      with:
+        ocaml-version: 4.12
+
+    - name: Install dependencies
+      run: opam install --deps-only -y .
+
+    - name: Build
+      run: dune build
+
+    - name: Run Tests
+      run: dune exec ./test.exe
+
+    - name: Clean Up
+      run: dune clean
