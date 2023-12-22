@@ -17,17 +17,21 @@ jobs:
     - name: Set up OCaml and Dune
       run: |
         opam init --auto-setup --disable-sandboxing
-        eval $(opam env)
+        export PATH=$HOME/.opam/default/bin:$PATH
         opam switch create . ocaml-base-compiler.4.12.1
         eval $(opam env)
         opam install --deps-only -y .
         opam install dune -y
 
-    - name: Clean Up Partially Installed Switch
-      run: opam switch remove .
-
-    - name: Create New OCaml Switch
-      run: opam switch create . ocaml-base-compiler.4.12.1
+    - name: Debugging Information
+      run: |
+        echo "PATH: $PATH"
+        opam --version
+        
+    - name: Check Environment
+      run: |
+        echo "PATH: $PATH"
+        echo "OCAML_TOPLEVEL_PATH: $OCAML_TOPLEVEL_PATH"  # Check other relevant variables
 
     - name: Build
       run: eval $(opam env) && dune build
