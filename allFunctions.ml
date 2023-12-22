@@ -50,7 +50,7 @@ let rec insertionSort lst =
   | [] -> []
   | h :: t -> insert h (insertionSort t);;
 
-let rec bubbleSort lst =
+let bubbleSort lst =
   let rec iter acc = function
     | x :: y :: rest ->
       if x > y then iter (y :: acc) (x :: rest)
