@@ -14,7 +14,7 @@ jobs:
     - name: Set up OCaml
       uses: ocaml/setup-ocaml@v2
       with:
-        ocaml-version: 4.12
+        ocaml-compiler: 4.12
         switch-create: true
 
 
