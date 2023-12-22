@@ -29,6 +29,7 @@ jobs:
     - name: Build
       run: |
         eval $(opam env)
+        opam install --deps-only -y .
         opam install dune -y
         dune build
 
