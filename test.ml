@@ -58,6 +58,12 @@ let listalgo = "test suite for arrayIndex" >::: [
   "bubbleSort2" >:: (fun _ ->
     assert_equal ~printer:print_list ([-2;-1;0;1;2]) (bubbleSort [0;1;-1;-2;2])
   );
+  "mergeSort1" >:: (fun _ ->
+    assert_equal ~printer:print_list ([1;2;3;4;5]) (mergeSort [5;2;1;4;3])
+  );
+  "mergeSort2" >:: (fun _ ->
+    assert_equal ~printer:print_list ([-2;-1;0;1;2]) (mergeSort [0;1;-1;-2;2])
+  );
 ]
 
 let _ = run_test_tt_main arrayindexing
