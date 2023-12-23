@@ -47,7 +47,7 @@ let insert x ((before, after) : 'a place) =
 
 (* List Algorithms Module functions *)
 
-let rec insertionSort lst =
+let insertionSort lst =
   let rec insert x sorted =
     match sorted with
     | [] -> [x]
