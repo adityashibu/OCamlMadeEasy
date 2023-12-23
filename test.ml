@@ -45,7 +45,7 @@ let arrayindexing = "test suite for listAlgorithms" >::: [
   );
 ]
 
-let listalgo = "test suite for arrayIndex" >::: [
+let listalgo = "test suite for list algorithms" >::: [
   "insertionSort1" >:: (fun _ ->
     assert_equal ~printer:print_list ([1;2;3;4;5]) (insertionSort [5;2;1;4;3])
   );
