@@ -45,16 +45,18 @@ let insert x ((before, after) : 'a place) =
 
 
 
-(*List Algorithms Module functions*)
+(* List Algorithms Module functions *)
 
-let rec insertionSort lst = 
-  let rec insertAt x lst = 
-    match lst with 
+let rec insertionSort lst =
+  let rec insert x sorted =
+    match sorted with
     | [] -> [x]
-    | h :: t -> if x <= h then x :: h :: t else h :: insertAt x t in 
-  match lst with 
-  | [] -> []
-  | h :: t -> insertAt h (insertionSort t);;
+    | h :: t -> if x <= h then x :: h :: t else h :: insert x t in
+  let rec insertSortAcc unsorted sorted =
+    match unsorted with
+    | [] -> sorted
+    | h :: t -> insertSortAcc t (insert h sorted) in
+  insertSortAcc lst []
 
 let bubbleSort lst =
   let rec iter acc = function
