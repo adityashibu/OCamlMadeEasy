@@ -87,3 +87,4 @@ let bsttest = "test suite for BST Functions" >::: [
 
 let _ = run_test_tt_main arrayindexing
 let _ = run_test_tt_main listalgo
+let _ = run_test_tt_main bsttest
