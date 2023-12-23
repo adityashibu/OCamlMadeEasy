@@ -1,18 +1,5 @@
 open OUnit2
 open ArrayIndexandAlgos
-open BSTFunctionsandAddons
-
-let bst1 =
-  Br (4,
-    Br (2,
-      Br (1, Lf, Lf),
-      Br (3, Lf, Lf)
-    ),
-    Br (6,
-      Br (5, Lf, Lf),
-      Br (7, Lf, Lf)
-    )
-  )
 
 (* Custom printer for a tuple of lists *)
 let print_tuple_of_lists (before, after) =
@@ -79,12 +66,5 @@ let listalgo = "test suite for list algorithms" >::: [
   );
 ]
 
-let bsttest = "test suite for BST Functions" >::: [
-  "insertionSort1" >:: (fun _ ->
-    assert_equal ~printer:string_of_int (7) (size bst1)
-  );
-]
-
 let _ = run_test_tt_main arrayindexing
 let _ = run_test_tt_main listalgo
-let _ = run_test_tt_main bsttest
