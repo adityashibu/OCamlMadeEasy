@@ -1,5 +1,5 @@
 open OUnit2
-open AllFunctions
+open ArrayIndexandAlgos
 
 (* Custom printer for a tuple of lists *)
 let print_tuple_of_lists (before, after) =
