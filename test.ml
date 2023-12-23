@@ -17,7 +17,7 @@ let arrayindexing = "test suite for listAlgorithms" >::: [
     assert_equal ~printer:print_tuple_of_lists ([1;2;3], [4]) (getPlace [1;2;3;4] 3)
   );
   "getPlace-Insert-Collapse" >:: (fun _ ->
-    assert_equal ~printer:print_list ([1;2]) (getPlace [] 0 |> insert 1 |> insert 2 |> collapse |> flatten)
+    assert_equal ~printer:print_list ([1;2]) (getPlace [] 0 |> insert 1 |> insert 2 |> collapse)
   );
   "isStart1" >:: (fun _ ->
     assert_equal ~printer:string_of_bool (true) (getPlace [1;2;3;4] 0 |> isStart)
