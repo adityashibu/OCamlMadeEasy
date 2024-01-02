@@ -1,5 +1,7 @@
 # OCamlMadeEasy
 
+![OCaml](https://img.shields.io/badge/OCaml-%23E98407.svg?style=for-the-badge&logo=ocaml&logoColor=white)
+
 Trying to add additional features to the language of OCaml such as array Indexing, etc
 
 ## How to clone this repository?
